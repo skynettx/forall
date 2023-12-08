@@ -16,18 +16,18 @@ int main(int argc, char* argv[])
 	{
 		printf("\n"
 			"\n"
-            "USAGE:  %s filename command\n"
-		    "\n"
-		    " Where 'filename' is the name of a file containing the\n"
+			"USAGE:  %s filename command\n"
+			"\n"
+			" Where 'filename' is the name of a file containing the\n"
 			" list of files to be operated on, and 'command' is a\n"
 			" DOS command that will operate on those files.\n"
-            "\n", argv[0]);
-		
+			"\n", argv[0]);
+
 		return 0;
 	}
 
 	strcpy(fname, argv[1]);
-	
+
 	f = fopen(fname, "r");
 
 	if (!f)
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 		sprintf(outcmd, "%s %s", incmd, fline);
 		printf("%s", outcmd);
 		system(outcmd);
-    }
+	}
 
 	fclose(f);
 

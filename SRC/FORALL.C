@@ -47,7 +47,8 @@ int main(int argc, char* argv[])
 	while (fgets(fline, sizeof(fline), f))
 	{
 		sprintf(outcmd, "%s %s", incmd, fline);
-		printf("%s", outcmd);
+		outcmd[strcspn(outcmd, "\n")] = '\0';
+		printf("%s\n", outcmd);
 		system(outcmd);
 	}
 
